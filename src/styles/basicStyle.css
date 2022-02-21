@@ -1,0 +1,57 @@
+/* Variables */
+
+:root {
+    /* Colores */
+    --primary: #7F5AF0;
+    --secondary: #A786DF;
+    --tertiary: #72757E;
+    --green: #2CB67D;
+    --grey: #94A1B2;
+    --purple: #6B47DC;
+    --neutral: #232E35;
+    --red: #EF4565;
+    --white: #FFFFFE;
+    --black:#16161A;
+}
+
+/* Fonts */
+    /*headline*/
+    h1 { 
+        font-size: 24px;
+        font-family:'Nunito', sans-serif;
+        font-style: normal;
+        font-weight: 800;
+        text-align: center;
+        line-height: 33px;
+    }
+    h2 { 
+        font-size: 22px;
+        font-family:'Nunito', sans-serif; 
+        font-weight: bold; 
+        font-style: normal;
+        line-height: 30px;
+        text-align: center;
+    }
+
+    /*Subtitle*/
+    h3 { 
+        font-size: 18px;
+        font-family:'Nunito', sans-serif; 
+        font-weight: 600; 
+        font-style: normal;
+        line-height: 25px;
+        text-align: center;
+        letter-spacing: 0.0015em;
+    }
+    /*Body 1*/
+    p { 
+        font-size: 16px;
+        font-family:'Nunito', sans-serif; 
+        font-weight: normal; 
+        font-style: normal;
+        line-height: 24px;
+        letter-spacing: 0.005em;
+    }
+    
+
+
