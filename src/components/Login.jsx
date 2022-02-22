@@ -39,8 +39,8 @@ function Login() {
                 cookies.set('nombre', respuesta.nombre, {path: "/"});
                 cookies.set('email', respuesta.email, {path: "/"});
                 alert("Bienvenido :D ");
-                navigate('/RetoFinal-Sprint2/home')
-                // window.location.href="/RetoFinal-Sprint2/home";
+                navigate('/RetoFinal-Sprint2/home');
+                //window.location.href="/RetoFinal-Sprint2/home";
             }else{
                 alert('El usuario o la contraseña no son correctos');
             }
