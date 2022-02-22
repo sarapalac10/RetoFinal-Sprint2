@@ -5,16 +5,20 @@ import { DivFooter } from '../styles/navbarStyle'
 import { DivProfile } from '../styles/profileStyle'
 import NavBar from './NavBar'
 import Cookies from 'universal-cookie';
+import { useNavigate } from 'react-router-dom'
 
 const cookies = new Cookies();
 
+
 class Perfil extends Component {
     cerrarSesion=()=>{
+      const navigate = useNavigate()
+
         cookies.remove('id', {path: "/"});
         cookies.remove('apellido', {path: "/"});
         cookies.remove('nombre', {path: "/"});
         cookies.remove('email', {path: "/"});
-        window.location.href="/RetoFinal-Sprint2/login";
+        navigate('/RetoFinal-Sprint2/home');
     }
 
     componentDidMount() {
