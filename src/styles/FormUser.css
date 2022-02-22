@@ -1,0 +1,31 @@
+#formulario{
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 3%;
+    border: 1px solid #7F5AF0;
+    margin-top: 5%;
+}
+
+#formulario h2{
+    text-align: center;
+    color: #7F5AF0;
+}
+
+button{
+   color: #fff;
+   background-color: #7F5AF0;
+   border: 1px solid #7F5AF0;
+   font-size: 100%;
+   border-radius: 15px;
+   padding: 10px;
+   margin-top: 10px;
+}
+
+input{
+   border: 1px solid #A786DF;
+   width: 300px;
+}
+
+label{
+    font-weight: bold;
+}

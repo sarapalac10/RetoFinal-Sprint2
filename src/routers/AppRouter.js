@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Home from '../components/Home';
 import '../App.css';
+import Home from '../components/Home';
 import QuestionHTML from '../components/QuestionHTML';
 import QuestionCSS from '../components/QuestionCSS';
 import QuestionJS from '../components/QuestionJS';
@@ -11,15 +11,16 @@ import Perfil from '../components/Perfil';
 import Estadistica from '../components/Estadistica';
 import FirstPage from '../components/FirstPage';
 import Login from '../components/Login';
+import User, { Form } from '../components/User';
 
 export const AppRouter = () => {
   return (
     <div>
-
       <BrowserRouter>
             <Routes>
               <Route>
-                <Route path="/" element={<Home />} /> 
+                <Route path='/login' element={<Login />}/>
+                <Route path="/home" element={<Home />} /> 
                 <Route path="/questionHTML" element={<QuestionHTML />} />
                 <Route path="/questionCSS" element={<QuestionCSS />} />
                 <Route path="/questionJS" element={<QuestionJS />} />
@@ -27,8 +28,8 @@ export const AppRouter = () => {
                 <Route path="/questionUX" element={<QuestionUX />} />
                 <Route path="/estadistica" element={<Estadistica />} />
                 <Route path="/perfil" element={<Perfil />} />
-                <Route path="/firstpage" element={<FirstPage />} />
-                <Route path="/login" element={<Login />} />
+                <Route path="/RetoFinal-Sprint2" element={<FirstPage />} />
+                <Route path="/user" element={<Form />} />
               </Route>
             </Routes>
       </BrowserRouter>

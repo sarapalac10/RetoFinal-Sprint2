@@ -27,6 +27,7 @@ export const ButtonProfile = styled(Button)`
     width: 350px;
     font-size: 16px;
     padding: 1rem;
+    cursor: pointer;
 `
 export const NombreProfile = styled.h2`
     font-size: 24px;
