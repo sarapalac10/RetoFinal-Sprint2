@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import md5 from 'md5';
+// import md5 from 'md5';
 import Cookies from 'universal-cookie';
 import { Image } from 'react-bootstrap';
 import { ContLoginArriba, TitleLoginArriba } from '../styles/LoginStyle';
+import { url } from '../helpers/url';
 
-const baseUrl="http://localhost:3001/usuarios";
 const cookies = new Cookies();
 
 class Login extends Component {
@@ -26,7 +26,8 @@ class Login extends Component {
     }
 
     iniciarSesion=async()=>{
-        await axios.get(baseUrl, {params: {email: this.state.form.email, password: md5(this.state.form.password)}})
+        // await axios.get(url, {params: {email: this.state.form.email, password: md5(this.state.form.password)}})
+        await axios.get(url, {params: {email: this.state.form.email, password: this.state.form.password}})
         .then(response=>{
             return response.data;
         })

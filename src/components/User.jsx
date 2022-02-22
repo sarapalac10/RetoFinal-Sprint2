@@ -4,6 +4,7 @@ import { url } from '../helpers/url';
 import '../styles/FormUser.css';
 import { DivProfile } from '../styles/profileStyle';
 
+
 export const Form = () => {
     const [user, setUser] = useState({
         id: "",
@@ -60,7 +61,7 @@ export const Form = () => {
                </div>
                <div>
                    <label>Password</label>
-                   <input id="inputPassword" name="password" onChange={handleOnChange} value={password} />
+                   <input id="inputPassword" type="password" name="password" onChange={handleOnChange} value={password} />
                </div>
 
                <div>

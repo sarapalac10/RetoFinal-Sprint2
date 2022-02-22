@@ -29,7 +29,7 @@ function QuestionJS() {
         return(
             <main className='app'>
                     <span> {" "}El juego terminó. Obtuviste {puntuacion} de {askJS.length} {" "}</span>
-                    <button onClick={()=> (window.location.href="/")}>Volver al Inicio</button>
+                    <button onClick={()=> (window.location.href="./home")}>Volver al Inicio</button>
             </main>
         )
 
