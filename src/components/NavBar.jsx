@@ -8,9 +8,9 @@ export default class NavBar extends Component {
     render() {
         return (
             <Nav>
-                <Link to="/home" className="nav-link"> <FiHome className="icon" /></Link>
-                <Link to="/estadistica"> <BiLineChart className="icon" /> </Link>
-                <Link to="/perfil"> <BiUser className="icon" /> </Link>
+                <Link to="/RetoFinal-Sprint2/home" className="nav-link"> <FiHome className="icon" /></Link>
+                <Link to="/RetoFinal-Sprint2/estadistica"> <BiLineChart className="icon" /> </Link>
+                <Link to="/RetoFinal-Sprint2/perfil"> <BiUser className="icon" /> </Link>
             </Nav>
         )
     }

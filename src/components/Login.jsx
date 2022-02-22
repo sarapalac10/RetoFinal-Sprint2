@@ -40,7 +40,7 @@ class Login extends Component {
                 cookies.set('email', respuesta.email, {path: "/"});
                 // alert(`Bienvenido ${respuesta.nombre} ${respuesta.apellido}`);
                 alert("Bienvenido :D ");
-                window.location.href="./home";
+                window.location.href="/RetoFinal-Sprint2/home";
             }else{
                 alert('El usuario o la contraseña no son correctos');
             }
@@ -52,7 +52,7 @@ class Login extends Component {
 
     componentDidMount() {
         if(cookies.get('username')){
-            window.location.href="./home";
+            window.location.href="/RetoFinal-Sprint2/home";
         }
     }
     
