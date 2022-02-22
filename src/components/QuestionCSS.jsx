@@ -3,8 +3,10 @@ import { Image  } from 'react-bootstrap'
 import { askCSS } from '../QuizData';
 import { ButtonStyle, DivProgress, DivTitle, Titulo } from '../styles/CardQuestion'
 import { AiOutlineClose, AiOutlineHeart } from "react-icons/ai";
+import { useNavigate } from 'react-router-dom';
 
 function QuestionCSS() {
+    const navigate = useNavigate()
     const [preguntaActual, setPreguntaActual] = useState(0);
     const [puntuacion, setPuntuacion] = useState(0);
     const [isFinished, setIsFinished] = useState(false);
@@ -29,7 +31,7 @@ function QuestionCSS() {
         return(
             <main className='app'>
                     <span> {" "}El juego terminó. Obtuviste {puntuacion} de {askCSS.length} {" "}</span>
-                    <button onClick={()=> (window.location.href="RetoFinal-Sprint2/home")}>Volver al Inicio</button>
+                    <button onClick={()=> navigate('/RetoFinal-Sprint2/home') }>Volver al Inicio</button>
             </main>
         )
 
