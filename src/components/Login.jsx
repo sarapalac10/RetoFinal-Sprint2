@@ -5,6 +5,7 @@ import Cookies from 'universal-cookie';
 import { Image } from 'react-bootstrap';
 import { ContLoginArriba, TitleLoginArriba } from '../styles/LoginStyle';
 import { url } from '../helpers/url';
+import { Navigate } from 'react-router-dom';
 
 const cookies = new Cookies();
 
@@ -40,7 +41,8 @@ class Login extends Component {
                 cookies.set('email', respuesta.email, {path: "/"});
                 // alert(`Bienvenido ${respuesta.nombre} ${respuesta.apellido}`);
                 alert("Bienvenido :D ");
-                window.location.href="/RetoFinal-Sprint2/home";
+                <Navigate to = './RetoFinal-Sprint2/home' />;
+                // window.location.href="/RetoFinal-Sprint2/home";
             }else{
                 alert('El usuario o la contraseña no son correctos');
             }
@@ -52,7 +54,8 @@ class Login extends Component {
 
     componentDidMount() {
         if(cookies.get('username')){
-            window.location.href="/RetoFinal-Sprint2/home";
+            <Navigate to = './RetoFinal-Sprint2/home' />
+            // window.location.href="/RetoFinal-Sprint2/home";
         }
     }
     
@@ -78,7 +81,7 @@ class Login extends Component {
                 <br />
                 <button className="btn-login" onClick={()=> this.iniciarSesion()}>Iniciar Sesión</button>
                 <p className='span-login'>¿Se te olvidó tu contraseña?</p>
-                <p>¿Aún no tienes una cuenta? <a href="./form" className='span-login'>Inscribirse</a></p>
+                <p>¿Aún no tienes una cuenta? <a href="/RetoFinal-Sprint2/form" className='span-login'>Inscribirse</a></p>
             </div>
         </div>
         </div>
