@@ -1,45 +1,50 @@
+import React, { Component } from 'react';
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
-import { Image } from 'react-bootstrap';
-import { Link, useNavigate } from 'react-router-dom';
+// import md5 from 'md5';
 import Cookies from 'universal-cookie';
-import { url } from '../helpers/url';
+import { Image } from 'react-bootstrap';
 import { ContLoginArriba, TitleLoginArriba } from '../styles/LoginStyle';
+import { url } from '../helpers/url';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 const cookies = new Cookies();
 
-function Login() {
-    const navigate = useNavigate()
-    const [form, setForm] = useState( {
-        email: '',
-        password: ''
-    })
+export default Login1
 
-    const handleChange= e=>{
-        setForm({
-                ...form,
+class Login1 extends Component {
+    state={
+        form:{
+            email: '',
+            password: ''
+        }
+    }
+    
+    handleChange=async e=>{
+        await this.setState({
+            form:{
+                ...this.state.form,
                 [e.target.name]: e.target.value
+            }
         });
     }
 
-    const useIniciarSesion=async()=>{
-        console.log('form', form)
-        await axios.get(url, {params: {email: form.email, password: form.password}})
+    iniciarSesion=async()=>{
+        const navigate = useNavigate()
+        // await axios.get(url, {params: {email: this.state.form.email, password: md5(this.state.form.password)}})
+        await axios.get(url, {params: {email: this.state.form.email, password: this.state.form.password}})
         .then(response=>{
-            console.log('response.data', response.data)
             return response.data;
         })
         .then(response=>{
             if(response.length>0){
-                let respuesta = response[0];
-                console.log('respuesta', respuesta)
-                console.log(respuesta.id);
+                var respuesta=response[0];
                 cookies.set('id', respuesta.id, {path: "/"});
                 cookies.set('apellido', respuesta.apellido, {path: "/"});
                 cookies.set('nombre', respuesta.nombre, {path: "/"});
                 cookies.set('email', respuesta.email, {path: "/"});
                 alert("Bienvenido :D ");
-                window.location.href="/RetoFinal-Sprint2/home";
+                navigate('/RetoFinal-Sprint2/login')
+                // window.location.href="/RetoFinal-Sprint2/home";
             }else{
                 alert('El usuario o la contraseña no son correctos');
             }
@@ -49,15 +54,14 @@ function Login() {
         })
     }
 
-    useEffect(() => {
+    componentDidMount() {
         if(cookies.get('username')){
-            navigate('/RetoFinal-Sprint2/home')
+            window.location.href="/RetoFinal-Sprint2/home";
         }
-        console.log("acá falló ")
-    })
+    }
     
-
-    return (
+    render() {
+        return (
         <div className="containerPrincipal-login">
             <ContLoginArriba>
                 <Image src='https://res.cloudinary.com/sarapalacio01/image/upload/v1645318305/Quiz-Reto2/daily-bits-purple-box_rumxpf.png' width="150px" />
@@ -70,20 +74,20 @@ function Login() {
             <div className="form-group">
                 <label>Email: </label>
                 <br />
-                <input type="text" className="form-control" name="email" onChange={handleChange} placeholder="Ingresa tu email" />
+                <input type="text" className="form-control" name="email" onChange={this.handleChange} placeholder="Ingresa tu email" />
                 <br />
                 <label>Contraseña: </label>
                 <br />
-                <input type="password" className="form-control" name="password" onChange={handleChange} placeholder="Ingresa tu contraseña" />
+                <input type="password" className="form-control" name="password" onChange={this.handleChange} placeholder="Ingresa tu contraseña" />
                 <br />
-                <button className="btn-login" onClick={useIniciarSesion}>Iniciar Sesión</button>
+                <button className="btn-login" onClick={()=> this.iniciarSesion()}>Iniciar Sesión</button>
                 <p className='span-login'>¿Se te olvidó tu contraseña?</p>
-                <p>¿Aún no tienes una cuenta? <Link to="/RetoFinal-Sprint2/form" className='span-login'>Inscribirse</Link></p>
+                <p>¿Aún no tienes una cuenta? <a href="/RetoFinal-Sprint2/form" className='span-login'>Inscribirse</a></p>
             </div>
         </div>
         </div>
         );
     }
+}
 
-
-export default Login
+export default Login1;

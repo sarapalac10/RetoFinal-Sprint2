@@ -14,12 +14,12 @@ class Perfil extends Component {
         cookies.remove('apellido', {path: "/"});
         cookies.remove('nombre', {path: "/"});
         cookies.remove('email', {path: "/"});
-        window.location.href="/login";
+        window.location.href="/RetoFinal-Sprint2/login";
     }
 
     componentDidMount() {
         if(!cookies.get('email')){
-          window.location.href="/login";
+          window.location.href="/RetoFinal-Sprint2/login";
         }
     }
 
