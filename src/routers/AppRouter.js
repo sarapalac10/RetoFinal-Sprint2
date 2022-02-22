@@ -11,7 +11,7 @@ import Perfil from '../components/Perfil';
 import Estadistica from '../components/Estadistica';
 import FirstPage from '../components/FirstPage';
 import Login from '../components/Login';
-import User, { Form } from '../components/User';
+import User, { Form } from '../components/Form';
 
 export const AppRouter = () => {
   return (
@@ -29,7 +29,7 @@ export const AppRouter = () => {
                 <Route path="/estadistica" element={<Estadistica />} />
                 <Route path="/perfil" element={<Perfil />} />
                 <Route path="/RetoFinal-Sprint2" element={<FirstPage />} />
-                <Route path="/user" element={<Form />} />
+                <Route path="/form" element={<Form />} />
               </Route>
             </Routes>
       </BrowserRouter>

@@ -78,7 +78,7 @@ class Login extends Component {
                 <br />
                 <button className="btn-login" onClick={()=> this.iniciarSesion()}>Iniciar Sesión</button>
                 <p className='span-login'>¿Se te olvidó tu contraseña?</p>
-                <p>¿Aún no tienes una cuenta? <a href='/user' className='span-login'>Inscribirse</a></p>
+                <p>¿Aún no tienes una cuenta? <a href="./form" className='span-login'>Inscribirse</a></p>
             </div>
         </div>
         </div>

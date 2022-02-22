@@ -4,7 +4,6 @@ import { url } from '../helpers/url';
 import '../styles/FormUser.css';
 import { DivProfile } from '../styles/profileStyle';
 
-
 export const Form = () => {
     const [user, setUser] = useState({
         id: "",
@@ -15,7 +14,7 @@ export const Form = () => {
 
     });
  
-    const {id, apellido, nombre, email, password } = user;
+    const {apellido, nombre, email, password } = user;
 
     const handleOnChange = ( {target} ) => {
         setUser( {
