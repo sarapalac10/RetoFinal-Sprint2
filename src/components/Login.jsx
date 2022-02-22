@@ -4,7 +4,7 @@ import { Image } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import Cookies from 'universal-cookie';
 import { url } from '../helpers/url';
-import { ContLoginArriba, TitleLoginArriba } from '../styles/LoginStyle';
+import { ContLoginArriba, TitleLoginArriba } from '../styles/loginStyle';
 
 const cookies = new Cookies();
 
