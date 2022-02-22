@@ -33,7 +33,7 @@ class Perfil extends Component {
               <Titulo>Perfil</Titulo>
         
               <DivProfile>
-                <Image src="https://res.cloudinary.com/sarapalacio01/image/upload/v1645387775/Quiz-Reto2/profile-francisco_rvm8hh.png" />
+                <Image src="https://res.cloudinary.com/sarapalacio01/image/upload/v1645318305/Quiz-Reto2/daily-bits-green-logo_vpq9e3.png" />
                 <NombreProfile>{cookies.get('nombre')+' '+cookies.get('apellido')}</NombreProfile>
                 <MailProfile>{cookies.get('email')}</MailProfile>
               </DivProfile>
