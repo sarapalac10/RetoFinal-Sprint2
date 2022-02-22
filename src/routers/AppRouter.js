@@ -19,17 +19,17 @@ export const AppRouter = () => {
       <BrowserRouter>
             <Routes>
               <Route>
-                <Route path='/login' element={<Login />}/>
-                <Route path="/home" element={<Home />} /> 
-                <Route path="/questionHTML" element={<QuestionHTML />} />
-                <Route path="/questionCSS" element={<QuestionCSS />} />
-                <Route path="/questionJS" element={<QuestionJS />} />
-                <Route path="/questionFIGMA" element={<QuestionFIGMA />} />
-                <Route path="/questionUX" element={<QuestionUX />} />
-                <Route path="/estadistica" element={<Estadistica />} />
-                <Route path="/perfil" element={<Perfil />} />
+                <Route path='/RetoFinal-Sprint2/login' element={<Login />}/>
+                <Route path="/RetoFinal-Sprint2/home" element={<Home />} /> 
+                <Route path="/RetoFinal-Sprint2/questionHTML" element={<QuestionHTML />} />
+                <Route path="/RetoFinal-Sprint2/questionCSS" element={<QuestionCSS />} />
+                <Route path="/RetoFinal-Sprint2/questionJS" element={<QuestionJS />} />
+                <Route path="/RetoFinal-Sprint2/questionFIGMA" element={<QuestionFIGMA />} />
+                <Route path="/RetoFinal-Sprint2/questionUX" element={<QuestionUX />} />
+                <Route path="/RetoFinal-Sprint2/estadistica" element={<Estadistica />} />
+                <Route path="/RetoFinal-Sprint2/perfil" element={<Perfil />} />
                 <Route path="/RetoFinal-Sprint2" element={<FirstPage />} />
-                <Route path="/form" element={<Form />} />
+                <Route path="/RetoFinal-Sprint2/form" element={<Form />} />
               </Route>
             </Routes>
       </BrowserRouter>
