@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/RetoFinal-Sprint2/static/css/main.f59a8f54.css",
-    "main.js": "/RetoFinal-Sprint2/static/js/main.2ed453a6.js",
+    "main.js": "/RetoFinal-Sprint2/static/js/main.ec88850f.js",
     "index.html": "/RetoFinal-Sprint2/index.html",
     "main.f59a8f54.css.map": "/RetoFinal-Sprint2/static/css/main.f59a8f54.css.map",
-    "main.2ed453a6.js.map": "/RetoFinal-Sprint2/static/js/main.2ed453a6.js.map"
+    "main.ec88850f.js.map": "/RetoFinal-Sprint2/static/js/main.ec88850f.js.map"
   },
   "entrypoints": [
     "static/css/main.f59a8f54.css",
-    "static/js/main.2ed453a6.js"
+    "static/js/main.ec88850f.js"
   ]
 }
