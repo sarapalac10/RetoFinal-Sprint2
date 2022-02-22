@@ -28,8 +28,8 @@ export const Form = () => {
         alert("SE HA REGISTRADO EL USUARIO")
 
         setTimeout(() => {
-            (window.location.href="/login")
-          },3000)
+            (window.location.href="/RetoFinal-Sprint2/login")
+          },2000)
     }
 
     const postData = () => {
