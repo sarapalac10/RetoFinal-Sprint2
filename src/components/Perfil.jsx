@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, useEffect } from 'react'
 import { Image } from 'react-bootstrap'
 import { ButtonProfile, MailProfile, NombreProfile, Titulo } from '../styles/profileStyle'
 import { DivFooter } from '../styles/navbarStyle'
@@ -10,46 +10,44 @@ import { useNavigate } from 'react-router-dom'
 const cookies = new Cookies();
 
 
-class Perfil extends Component {
-    cerrarSesion=()=>{
-      const navigate = useNavigate()
+function Perfil() {
+  const navigate = useNavigate()
+  
+  const cerrarSesion=()=>{
+      cookies.remove('id', {path: "/"});
+      cookies.remove('apellido', {path: "/"});
+      cookies.remove('nombre', {path: "/"});
+      cookies.remove('email', {path: "/"});
+      
+      // navigate('/RetoFinal-Sprint2/login'); // <==== CAMBIE ESTO 
+  }
 
-        cookies.remove('id', {path: "/"});
-        cookies.remove('apellido', {path: "/"});
-        cookies.remove('nombre', {path: "/"});
-        cookies.remove('email', {path: "/"});
-        navigate('/RetoFinal-Sprint2/home');
+  useEffect(() => {
+    console.log('encontro cookies');
+    console.log(cookies.get('email'));
+    if(!cookies.get('email')){
+      console.log('No encontro cookies');
+      return navigate('/RetoFinal-Sprint2/login')
     }
+})
 
-    componentDidMount() {
-        if(!cookies.get('email')){
-          window.location.href="/RetoFinal-Sprint2/login";
-        }
-    }
+return (
+    <div className='profile-div'>
+      <Titulo>Perfil</Titulo>
 
-    render() {
-        console.log('id: '+ cookies.get('id'));
-        console.log('apellido: '+cookies.get('apellido'));
-        console.log('nombre: '+cookies.get('nombre'));
-        console.log('email: '+cookies.get('email'));
-        return (
-            <div className='profile-div'>
-              <Titulo>Perfil</Titulo>
-        
-              <DivProfile>
-                <Image src="https://res.cloudinary.com/sarapalacio01/image/upload/v1645318305/Quiz-Reto2/daily-bits-green-logo_vpq9e3.png" />
-                <NombreProfile>{cookies.get('nombre')+' '+cookies.get('apellido')}</NombreProfile>
-                <MailProfile>{cookies.get('email')}</MailProfile>
-              </DivProfile>
-        
-              <ButtonProfile onClick={()=>this.cerrarSesion()}>Cerrar sesión</ButtonProfile>
-        
-              <DivFooter>
-                <NavBar />
-              </DivFooter>
-            </div>
-        );
-    }
+      <DivProfile>
+        <Image src="https://res.cloudinary.com/sarapalacio01/image/upload/v1645318305/Quiz-Reto2/daily-bits-green-logo_vpq9e3.png" />
+        <NombreProfile>{cookies.get('nombre')+' '+cookies.get('apellido')}</NombreProfile>
+        <MailProfile>{cookies.get('email')}</MailProfile>
+      </DivProfile>
+
+      <ButtonProfile onClick={() => cerrarSesion()}>Cerrar sesión</ButtonProfile>
+
+      <DivFooter>
+        <NavBar />
+      </DivFooter>
+    </div>
+  )
 }
 
 export default Perfil;
