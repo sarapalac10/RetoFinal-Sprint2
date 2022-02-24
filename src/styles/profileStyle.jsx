@@ -8,6 +8,12 @@ export const DivProfile = styled.div`
     justify-content: center;
     margin-top: 5rem;
     color: #fff;
+
+    .style-form{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
 `
 export const Titulo = styled.h2`
     padding: 1rem;

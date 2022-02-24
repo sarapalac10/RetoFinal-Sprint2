@@ -25,20 +25,27 @@ export const Form = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        alert("SE HA REGISTRADO EL USUARIO")
-
+        
         setTimeout(() => {
             (window.location.href="/RetoFinal-Sprint2/login")
           },2000)
     }
 
     const postData = () => {
-        axios.post(url, user)
-            .then(response => {
-                console.log(response.data)
-            }).catch(error => {
-                console.log(error)
-            })
+        if(apellido!== '' && email!== '' && password!== '' && password.length > 5 ){
+            axios.post(url, user)
+                .then(response => {
+                    console.log(response.data)
+                }).catch(error => {
+                    console.log(error)
+                })
+                console.log('holaaaaa');
+                console.log('password', password)
+                console.log(password.length)
+                alert("SE HA REGISTRADO EL USUARIO");
+        }else{
+            alert("La contraseña debe contener mínimo 6 caracteres");
+        }
     }
 
     return (
@@ -46,26 +53,27 @@ export const Form = () => {
            <form id="formulario" onSubmit={handleSubmit}>
            <h2>Registro de Usuario</h2>
            <hr/>
-               <div>
-                   <label>Nombre</label>
-                   <input id="inputNombre" name="nombre" onChange={handleOnChange} value={nombre} />
-               </div>
-               <div>
-                   <label>Apellido</label>
-                   <input id="inputApellido" name="apellido" onChange={handleOnChange} value={apellido} />
-               </div>
-               <div>
-                   <label>Email</label>
-                   <input id="inputEmail" name="email" onChange={handleOnChange} value={email} />
-               </div>
-               <div>
-                   <label>Password</label>
-                   <input id="inputPassword" type="password" name="password" onChange={handleOnChange} value={password} />
-               </div>
-
+            <div className='style-form'>
+                <div>
+                    <label>Nombre</label>
+                    <input id="inputNombre" name="nombre" onChange={handleOnChange} value={nombre} />
+                </div>
+                <div>
+                    <label>Apellido</label>
+                    <input id="inputApellido" name="apellido" onChange={handleOnChange} value={apellido} />
+                </div>
+                <div>
+                    <label>Email</label>
+                    <input id="inputEmail" name="email" onChange={handleOnChange} value={email} />
+                </div>
+                <div>
+                    <label>Password</label>
+                    <input id="inputPassword" type="password" name="password" onChange={handleOnChange} value={password} />
+                </div>
+            </div>
                <div>
                    <button id="btnRegistro" onClick={postData} >Enviar</button> 
-               </div>
+                </div>
            </form>
         </DivProfile>
     )
