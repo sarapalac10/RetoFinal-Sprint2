@@ -18,15 +18,11 @@ function Perfil() {
       cookies.remove('apellido', {path: "/"});
       cookies.remove('nombre', {path: "/"});
       cookies.remove('email', {path: "/"});
-      
-      // navigate('/RetoFinal-Sprint2/login'); // <==== CAMBIE ESTO 
+      navigate('/RetoFinal-Sprint2/login');
   }
 
   useEffect(() => {
-    console.log('encontro cookies');
-    console.log(cookies.get('email'));
     if(!cookies.get('email')){
-      console.log('No encontro cookies');
       return navigate('/RetoFinal-Sprint2/login')
     }
 })
